@@ -1,0 +1,35 @@
+<html>
+<head>
+	  <title>Biology Quizes</title>
+    {% load static %}
+    {% csrf_token %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body style="background-color: lightgray;">
+
+<h1 align="center">Biology Quizes</h1>
+  <div class="container-fluid">  
+   <div class="card">
+   <h5 class="card-header">Biology quiz 1</h5>
+   <div class="card-body">
+    <h5 class="card-title">Botony</h5>
+    <p class="card-text">General biology related questions</p>
+    <a href="b1" class="btn btn-primary">Quiz 1</a>
+  </div>
+  </div> <br><br>      
+  <div class="card">
+  <h5 class="card-header">Biology quiz 2</h5>
+  <div class="card-body">
+    <h5 class="card-title">Zoology</h5>
+    <p class="card-text">General biology related questions</p>
+    <a href="b2" class="btn btn-primary">Quiz 2</a>
+  </div>
+  </div>       
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+</body>
+</html>

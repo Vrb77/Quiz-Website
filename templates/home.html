@@ -1,0 +1,189 @@
+<html>
+<head>
+     
+	<title>Online Quiz</title>
+  {% load static %}
+     {% csrf_token %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+</head>
+<body style="background-color: lightblue;">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+  <div class="container-fluid">   
+	<!-- Nav tabs -->
+  <ul class="nav nav-pills" id="myTab">
+	   <a class="navbar-brand text-white" href="#">Quiz Site</a>&nbsp;&nbsp;&nbsp;
+  <li class="nav-item" >
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"  aria-controls="home" >Home</button>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" aria-controls="about">About</button>
+  </li>
+  <li class="nav-item" >
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" aria-controls="contact" >Contact Us</button>
+  </li>
+ 
+  <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Quizzes 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="phy">Physics</a></li>
+            <li><a class="dropdown-item" href="chem">Chemistry</a></li>
+            <li><a class="dropdown-item" href="math">Mathematics</a></li>
+            <li><a class="dropdown-item" href="bio">Biology</a></li>
+          </ul>
+  </li>
+</ul>
+
+<ul class="nav justify-content-end">
+  <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">             
+          &#128100;{% for message in messages %}
+                      <p id="messages">{{message}}</p>
+                   {% endfor %}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="profile">Profile</a></li>           
+          </ul>
+  </li>
+  <li class="nav-item">
+    <a href="logout"><button type="button" class="btn btn-success">Logout</button></a></button>
+  </li>
+</ul>
+</div>
+</nav>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active " id="home" aria-labelledby="home-tab"  ><br><br>
+    <center> 
+      <h1>Test your knowledge !</h1>
+    </center>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'phy2.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h5>Physics</h5>
+          <a href="phy"><button class="btn-danger">Go To Physics Quiz</button></a>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'chem2.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h5>Chemistry</h5>
+          <a href="chem"><button class="btn-danger">Go To Chemistry Quiz</button></a>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'math3.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h5>Mathematics</h5>
+          <a href="math"><button class="btn-danger">Go To Mathematics Quiz</button></a>
+        </div>
+    </div>
+    <div class="carousel-item ">
+      <img src="{% static 'bio2.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+          <h5>Biology</h5>
+          <a href="bio"><button class="btn-danger">Go To Biology Quiz</button></a>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<h1>Steps to attempt Quiz</h1>
+<ul type="square">
+  <li><h3>Click on go to quiz </h3></li>
+  <li><h3>Click on quiz you want to attempt</h3></li>
+  <li><h3>Attempt the quiz & click on submit</h3></li>
+  <li><h3>Get the results</h3></li>
+</ul>
+<br><br><br><br>
+</div><!--End Home-->
+<!--About Us Tab-->
+  <div class="tab-pane" id="about"  aria-labelledby="about-tab" >
+  	<br><br><h1>About Us</h1>
+    <img src="{% static 'stud.jpg' %}" align="center" style="width: 70%;height: 70%;">
+<h2> About </h2><br>
+<h3>Quiz/Assessment: The Personalization quiz for students lets you find out if you are a expert or still have room for improvement.
+<br><br>
+Rating: ⭐️⭐️⭐️⭐️
+<br><br>
+Comments: This landing page gave all the visitors the peace of mind they deserve. It meets the majority of the criteria. The visitor knows what he can expect of this quiz, and how much time he has to invest taking it. 
+
+This quiz site is developed in 2021 for students. There’s no distraction at all from any CTAs or the visual at the right side of the page. It’s a clean and neat quiz landing page, with a strong call-to-action. Sitecore is in fact challenging the visitor to beat the score of their colleague. That alone gives them the drive to want to take the quiz. 
+
+  <br><br>
+  The main goal of the application is to enable users to practice for subjective tests conducted for admissions and recruitment, with focus on science<br>This quiz site is to develope students knowledge. <br>
+In this site they will get lots of quizes for practice</h3>
+<br><br><br>
+
+<h1>⭐️Features</h1>
+<img src="{% static 'ab1.jpg' %}" align="right">
+<h3>&#10003;  Multiple Quizzes</h3>
+<h3>&#10003;  Improve Students Knoledge</h3>
+<h3>&#10003;  Best practice to improve JEE & NEET score</h3>
+<h3>&#10003;  Quizzes based on subjects - Physics, Chemistry, Mathematics, Biology</h3>
+<h3>&#10003;  Way to test your knowledge</h3>
+<h3>&#10003;  Best Quiz Site</h3>
+<br><br>
+
+  	<h3>In this website students can give quizes of subjects - Physics,Chemistry,Mathematics & Biology <br>
+      In every subject there are 2 quizes<br> 
+    After submitting the quiz the result will generate <br><br><br></h3>
+  </div>
+<!--About Tab End-->
+<!--Contact us tab-->
+  <div class="tab-pane" id="contact"  aria-labelledby="contact-tab"><br><br><h1>Contact us </h1>
+<img src="{% static 'contact1.jpg' %}" align="right">
+ <h1>Get in touch</h1>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+        {{form.as_p }}
+<button class="btn-danger" type="submit">Submit</button>
+  </form>
+<h4>Mobile no: xxxxxxx123<br>
+   Address:Near bus stop,Sangamner
+   <br> You can also visit our another site : <a >quizes</a><br>
+   Follow us on : <a><img  id="fb" src="{% static 'fb.png'%}"></a>
+ <a><img  id="fb" src="{% static 'insta.png'%}"></a>
+<a><img  id="fb" src="{% static 'twit.png'%}"></a></h4>
+<br><br>  
+  </div>
+    </div>
+  <!--End of Contact us tab-->
+</div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright 
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+

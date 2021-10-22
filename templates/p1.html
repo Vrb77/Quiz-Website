@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Physics quiz 1</title>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color: lightyellow;">
+    <form method="POST" action="">
+  {% csrf_token %}
+	{% for c in p1 %}
+        <p style="color: red;">{{c.que}}</p>
+       <input type="radio" value="{{c.op1}}" name="{{c.que}}" id="r1">{{c.op1}}<br>
+        <input type="radio" value="{{c.op2}}" name="{{c.que}}" id="r2">{{c.op2}}<br>
+        <input type="radio" value="{{c.op3}}" name="{{c.que}}" id="r3">{{c.op3}}<br>
+        <input type="radio" value="{{c.op4}}" name="{{c.que}}" id="r4">{{c.op4}}<br>
+       <br><br>
+      
+            {% endfor %}
+                <button class="btn-danger">Submit the quiz</button>
+         
+     </form>
+</body>
+</html>
